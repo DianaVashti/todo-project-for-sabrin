@@ -32,10 +32,11 @@
 ### Back-End:
 - [ ] App uses a postgreSQL db.
 - [ ] App uses pg-promise.
-- [ ] There is a function that gets all un-completed todos called `getAllTodos`.
-- [ ] There is a function that gets all completed todos called `getCompletedTodos`.
-- [ ] There is a function that marks a todo as completed called `completeOneTodo`.
-- [ ] There is a function that adds a new todo called `addOneTodo`.
+- [ ] db functions live in the actions folder (can be 1 file or 4 separate, your choice)
+  - [ ] There is a function that gets all un-completed todos called `getAllTodos`.
+  - [ ] There is a function that gets all completed todos called `getCompletedTodos`.
+  - [ ] There is a function that marks a todo as completed called `completeOneTodo`.
+  - [ ] There is a function that adds a new todo called `addOneTodo`.
 - [ ] There is a `schema.sql` file and the schema is only one table called `todos`.
   - [ ] `todos` table stores todo `description` & `is_completed` (BOOLEAN), as well as a serialized `id`.
 
@@ -49,4 +50,4 @@
 - in the app.js file you need to uncomment the line regarding which view engine you choose (pug vs ejs) and then delete the corresponding files in views.
 - the views files are blank so you will need to add the whole html code: including the head etc...
 - The set up creates a basic as well as test database. use this to your advantage for your test (i.e. know you can delete all the data after/before each test if you want to ensure the test always tests the same thing).
-- the database config is already set up for you. 
+- the database config is already set up for you.
