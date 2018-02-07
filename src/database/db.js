@@ -12,7 +12,7 @@ const pgp = require('pg-promise')();
 const db = pgp( connectionString );
 
 const getAllTodos = () => {
-  return db.any(`SELECT id, description FROM todos `,  [completed])
+  return db.any(`SELECT id, description FROM todos `)
 }
 
 
@@ -24,11 +24,10 @@ const getCompletedTodos = () => {
 
 
 const completeOneTodo = () => {
-  return db.any(`INSERT INTO todos
-    (name, description)
-    VALUES
-    ($1, $2)
-    RETURNING *`)
+  return db.any(`UPDATE todos
+    SET name = completed
+    WHERE id = $1
+    RETURNING *`))
 
 }
 
