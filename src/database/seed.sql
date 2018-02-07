@@ -1,7 +1,7 @@
 \c todos
 
-INSERT INTO todos (name, description) VALUES
-('Groceries', '10 items')
-('Clean Room', 'Storage')
-('Meditate', '20Min')
-('Jobs', 'Apply to 20')
+INSERT INTO todos (description) VALUES
+('Groceries')
+('Clean Room')
+('Meditate')
+('Jobs', )
