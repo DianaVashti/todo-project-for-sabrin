@@ -23,7 +23,7 @@ const getCompletedTodos = () => {
 }
 
 
-const completeOneTodo = (id) => {
+const completeOneTodo = () => {
   return db.any(`UPDATE todos
     SET name = completed
     WHERE id = $1
@@ -31,7 +31,7 @@ const completeOneTodo = (id) => {
 
 }
 
-const addOneTodo = (name, description) => {
+const addOneTodo = () => {
   return db.one(`INSERT INTO todos
     (name, description)
     VALUES
