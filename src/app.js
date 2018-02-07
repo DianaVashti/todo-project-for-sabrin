@@ -15,8 +15,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // ***  EDIT HERE  ***
 // Uncomment applicable line depending on which view engine you choose:
-app.set('view engine', 'ejs');
-// app.set('view engine', 'pug');
+
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

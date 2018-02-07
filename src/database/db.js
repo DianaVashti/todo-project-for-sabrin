@@ -11,4 +11,44 @@ if(process.env.NODE_ENV === 'development'){
 const pgp = require('pg-promise')();
 const db = pgp( connectionString );
 
-module.exports = db;
+const getAllTodos = () => {
+  return db.any(`SELECT id, description FROM todos `,  [completed])
+}
+
+
+const getCompletedTodos = () => {
+  return db.any(`SELECT id, description FROM
+    todos`)
+
+}
+
+
+const completeOneTodo = () => {
+  return db.any(`INSERT INTO todos
+    (name, description)
+    VALUES
+    ($1, $2)
+    RETURNING *`)
+
+}
+
+const addOneTodo = () => {
+  return db.one(`INSERT INTO todos
+    (name, description)
+    VALUES
+    ($1, $2)
+    RETURNING *`)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = db, getAllTodos, getCompletedTodos,completeOneTodo,addOneTodo   ;
