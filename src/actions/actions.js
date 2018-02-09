@@ -8,34 +8,37 @@ if(process.env.NODE_ENV === 'development'){
   connectionString = `postgres://${process.env.USER}@localhost:5432/${databaseName_test}`
 }
 
-const pgp = require('pg-promise')();
-const db = pgp( connectionString );
+// const pgp = require('pg-promise')();
+// const db = pgp( connectionString );
+const db = require('../database/db.js')
+
 
 const getAllTodos = () => {
-  return db.any(`SELECT id, description FROM todos `)
+  return db.any(`SELECT id, description FROM todos
+    WHERE is_completed = false`)
 }
 
 
 const getCompletedTodos = () => {
-  return db.any(`SELECT id, description FROM
-    todos`)
+  return db.any(`SELECT * FROM
+    todos WHERE is_completed = true`)
 
 }
 
 
-const completeOneTodo = () => {
+const completeOneTodo = (id) => {
   return db.any(`UPDATE todos
-    SET name = completed
+    SET is_completed = true
     WHERE id = $1
-    RETURNING *`))
+    RETURNING *`)
 
 }
 
 const addOneTodo = () => {
   return db.one(`INSERT INTO todos
-    (name, description)
+    (description)
     VALUES
-    ($1, $2)
+    ($1)
     RETURNING *`)
 }
 
@@ -50,4 +53,4 @@ const addOneTodo = () => {
 
 
 
-module.exports = {  getAllTodos, getCompletedTodos,completeOneTodo,addOneTodo   }
+module.exports = { db, getAllTodos, getCompletedTodos,completeOneTodo,addOneTodo   }

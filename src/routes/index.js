@@ -1,15 +1,8 @@
 // ADD CODE HERE
 var express = require('express');
-const bodyParser = require('body-parser')
-const { getAllTodos, getCompletedTodos,completeOneTodo,addOneTodo } = require('./routes/index.js')
-const app = express()
-app.set('view engine', 'pug')
-app.use(express.static('public'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true}))
+var app = express()
 
-
-app.post('/complete', (request, response) => {
+app.post('/complete/:id', (request, response) => {
   const id = request.body.id
   completeOneTodo(id)
   .then((todo) => {
@@ -20,8 +13,8 @@ app.post('/complete', (request, response) => {
 
 app.post('/add', (request, response) => {
   const { name, description } = request.body
-  addOneTodo(name, description)
-  .then((todo) => {
+  addOneTodo(description)
+  .then(() => {
     response.redirect('/')
   })
   .catch((err) => {
@@ -42,7 +35,7 @@ app.get('/', (request, response) => {
 
 
 app.get('/complete', (request, response) => {
-  completeOneTodo(id)
+  getCompletedTodos()
   .then((todo) => {
     response.render('completed', { todo })
   })
@@ -55,5 +48,4 @@ app.get('/complete', (request, response) => {
 
 
 
-app.listen(3000, () =>
-console.log('Example app listening on port 3000!')
+module.exports = app;

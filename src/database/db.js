@@ -11,43 +11,6 @@ if(process.env.NODE_ENV === 'development'){
 const pgp = require('pg-promise')();
 const db = pgp( connectionString );
 
-const getAllTodos = () => {
-  return db.any(`SELECT id, description FROM todos `)
-}
 
 
-const getCompletedTodos = () => {
-  return db.any(`SELECT id, description FROM
-    todos`)
-
-}
-
-
-const completeOneTodo = (id) => {
-  return db.any(`UPDATE todos
-    SET name = completed
-    WHERE id = $1
-    RETURNING *`))
-
-}
-
-const addOneTodo = (name, description) => {
-  return db.one(`INSERT INTO todos
-    (name, description)
-    VALUES
-    ($1, $2)
-    RETURNING *`)
-}
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = {  getAllTodos, getCompletedTodos,completeOneTodo,addOneTodo   }
+module.exports = db
