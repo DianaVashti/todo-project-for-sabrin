@@ -4,7 +4,7 @@ INSERT INTO todos (description) VALUES
 ('Meditate'),
 ('Jobs')
 ;
-INSERT INTO todos (description VALUES
+INSERT INTO todos (description) VALUES
 ('Get Food')
 ('Cook')
 ;
