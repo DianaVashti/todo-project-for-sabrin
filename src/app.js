@@ -6,11 +6,13 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes')
 
-const ROOT_DIR = path.resolve(__dirname, '../')
+const ROOT_DIR = path.resolve(__dirname, './')
 
 var app = express();
 
 // view engine setup
+// console.log(path.join(__dirname, './views'));
+
 app.set('views', path.join(__dirname, 'views'));
 
 // ***  EDIT HERE  ***

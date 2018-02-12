@@ -1,18 +1,20 @@
 // ADD CODE HERE
 var express = require('express');
-var app = express()
+var app = express.Router()
+
+const { completeOneTodo, addOneTodo, getAllTodos, getCompletedTodos } = require('../actions/actions.js')
 
 app.post('/complete/:id', (request, response) => {
-  const id = request.body.id
+  const id = request.params.id
   completeOneTodo(id)
-  .then((todo) => {
+  .then(() => {
     response.redirect('/')
   })
 })
 
 
 app.post('/add', (request, response) => {
-  const { name, description } = request.body
+  const description = request.body.description
   addOneTodo(description)
   .then(() => {
     response.redirect('/')
@@ -26,7 +28,7 @@ app.post('/add', (request, response) => {
 app.get('/', (request, response) => {
   getAllTodos()
   .then((todo) => {
-    response.render('home',{ todo })
+    response.render('home', { todo })
   })
   .catch((err) => {
 
@@ -36,8 +38,8 @@ app.get('/', (request, response) => {
 
 app.get('/complete', (request, response) => {
   getCompletedTodos()
-  .then((todo) => {
-    response.render('completed', { todo })
+  .then((task) => {
+    response.render('completed', { task })
   })
   .catch((err) => {
 
@@ -48,4 +50,4 @@ app.get('/complete', (request, response) => {
 
 
 
-module.exports = app;
+module.exports =  app

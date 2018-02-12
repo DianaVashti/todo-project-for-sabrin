@@ -4,7 +4,7 @@ INSERT INTO todos (description) VALUES
 ('Meditate'),
 ('Jobs')
 ;
-INSERT INTO todos (description, is_completed) VALUES
-('Get Food', true),
-('Cook', true)
+INSERT INTO todos (description VALUES
+('Get Food')
+('Cook')
 ;
