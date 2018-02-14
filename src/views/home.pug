@@ -1,6 +1,24 @@
+//- doctype html
+//- head
+//-   title register form
+//- body
+//-   ul
+//-     each todo in todos
+//-       li= todos.id
+//-       label(for='todo') Add New todo:
+//-       input#name.form-control(type='text', placeholder='id and description' description='description')
+//- button(id='incomplete') Incomplete
+//- script(src="/public/index.js")
 doctype html
 head
+  link(rel='stylesheet', type='text/css', href='style.css')
 body
+  table(class='todos')
+  h2(id='Incomplete') Todays Incomplete todos
   ul
-    each todo in todos
-      li= todos
+    each incomplete in incompletes
+      li= incomplete.description
+      button(class='mustDo') Do it
+  form(method='POST' action='/register')
+  div.form-group
+      //- script(src="/public/index.js")

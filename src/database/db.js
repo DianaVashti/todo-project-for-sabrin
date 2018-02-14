@@ -8,6 +8,8 @@ if(process.env.NODE_ENV === 'development'){
   connectionString = `postgres://${process.env.USER}@localhost:5432/${databaseName_test}`
 }
 
+console.log('connectionString :: =>', connectionString);
+
 const pgp = require('pg-promise')();
 const db = pgp( connectionString );
 

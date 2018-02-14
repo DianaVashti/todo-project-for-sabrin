@@ -1,0 +1,77 @@
+
+
+body {
+  background-color: #801515;
+}
+
+h2 {
+  color: #FFAAAA
+}
+
+/* #Completed { */
+.completed {
+  border-radius: 3em;
+    border-color: #FFAAAA;
+    color: #D46A6A;
+    background-color: FFAAAA
+  }
+
+.mustDo {
+  border-radius: 3em;
+    border-color: #FFAAAA;
+    color: #D46A6A;
+    background-color: FFAAAA
+  }
+
+
+
+      /* image: linear-gradient(to right,
+        transparentize($turquoise, 0.4),
+        transparentize($turquoise, 0.4) 5%,
+        $turquoise 5%,
+        $turquoise 10%,
+        transparentize($turquoise, 0.4) 10%,
+        transparentize($turquoise, 0.4) 15%,
+        $turquoise 15%,
+        $turquoise 20%,
+        transparentize($turquoise, 0.4) 20%,
+        transparentize($turquoise, 0.4) 25%,
+        $turquoise 25%,
+        $turquoise 30%,
+        transparentize($turquoise, 0.4) 30%,
+        transparentize($turquoise, 0.4) 35%,
+        transparentize($turquoise, 0.4) 40%,
+        transparentize($turquoise, 0.4) 45%,
+        $turquoise 45%,
+        $turquoise 50%,
+        transparentize($turquoise, 0.4) 50%,
+        transparentize($turquoise, 0.4) 55%,
+        $turquoise 55%,
+        $turquoise 60%,
+        transparentize($turquoise, 0.4) 60%,
+        transparentize($turquoise, 0.4) 65%,
+        $turquoise 65%,
+        $turquoise 70%,
+        transparentize($turquoise, 0.4) 70%,
+        transparentize($turquoise, 0.4) 75%,
+        $turquoise 75%,
+        $turquoise 80%,
+        transparentize($turquoise, 0.4) 80%,
+        transparentize($turquoise, 0.4) 85%,
+        $turquoise 85%,
+        $turquoise 90%,
+        transparentize($turquoise, 0.4) 90%,
+        transparentize($turquoise, 0.4) 95%,
+        $turquoise 95%,
+        $turquoise 100%); */
+      position: 0 0;
+      size: 100%;
+    } */
+    transition: background 300ms ease-in-out;
+
+    &:hover {
+      background-position: 100px;
+    }
+  }
+
+}

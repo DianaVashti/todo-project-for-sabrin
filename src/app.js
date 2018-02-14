@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes')
 
-const ROOT_DIR = path.resolve(__dirname, './')
+const ROOT_DIR = path.resolve(__dirname, '../public')
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(`${ROOT_DIR}/public`))
+app.use(express.static(ROOT_DIR))
 
 app.use(routes);
 
