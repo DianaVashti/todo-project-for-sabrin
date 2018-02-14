@@ -1,10 +1,10 @@
-INSERT INTO todos (description) VALUES
+INSERT INTO todoz (description) VALUES
 ('Groceries'),
 ('Clean Room'),
 ('Meditate'),
 ('Jobs')
 ;
-INSERT INTO todos (description) VALUES
-('Get Food')
+INSERT INTO todoz (description) VALUES
+('Get Food'),
 ('Cook')
 ;

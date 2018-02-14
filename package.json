@@ -10,6 +10,7 @@
     "db:delete": "dropdb todoz",
     "db:delete_test": "dropdb todoz_test",
     "db:seed_test": "psql todoz_test < src/database/seed.sql",
+    "db:seed": "psql todoz < src/database/seed.sql",
     "test": "export NODE_ENV=test && mocha --require babel-core/register test/test.js"
   },
   "repository": {

@@ -27,8 +27,8 @@ app.post('/add', (request, response) => {
 
 app.get('/', (request, response) => {
   getAllTodos()
-  .then((todo) => {
-    response.render('home', { todo })
+  .then((incompletes) => {
+    response.render('home', { incompletes })
   })
   .catch((err) => {
 
@@ -38,11 +38,13 @@ app.get('/', (request, response) => {
 
 app.get('/complete', (request, response) => {
   getCompletedTodos()
-  .then((task) => {
-    response.render('completed', { task })
+  .then((tasks) => {
+    // console.log('BOB :: =>', tasks)
+    response.render('completed', { tasks })
   })
   .catch((err) => {
-
+    console.log(err.message);
+    response.json(err)
   })
 })
 

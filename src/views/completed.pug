@@ -1,9 +1,10 @@
 doctype html
 head
+  link(rel='stylesheet', type='text/css', href='style.css')
 body
+  h2 Todays completed tasks
   ul
     each task in tasks
-      li= task
-    
-    
-    
+      li= task.description
+      button(class='completed') Done
+      script(src="/public/index.js")

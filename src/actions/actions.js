@@ -9,7 +9,7 @@ const getAllTodos = () => {
 
 const getCompletedTodos = () => {
   return db.any(`SELECT * FROM
-    todos WHERE is_completed = true`)
+    todos WHERE is_completed = TRUE`)
 
 }
 
